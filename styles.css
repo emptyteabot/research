@@ -66,6 +66,7 @@ body::before {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  overflow-y: auto;
 }
 
 .assignment-modal.is-visible {
@@ -82,6 +83,8 @@ body::before {
 .assignment-dialog {
   position: relative;
   width: min(960px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
   padding: 32px;
   background: rgba(255, 255, 255, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.95);
@@ -511,6 +514,9 @@ body::before {
 
 .filter-row {
   margin-top: 28px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  padding-bottom: 4px;
 }
 
 .filter-chip,
@@ -548,6 +554,23 @@ body::before {
   margin-top: 28px;
   padding: 24px;
   background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(223,247,232,0.72));
+}
+
+.tab-row {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.tab-row::-webkit-scrollbar,
+.filter-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.tab-row::-webkit-scrollbar-thumb,
+.filter-row::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.38);
+  border-radius: 999px;
 }
 
 .live-mvp-banner h3 {
@@ -840,8 +863,16 @@ body::before {
     grid-template-columns: 1fr;
   }
 
+  .assignment-modal {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
   .assignment-dialog {
-    padding: 24px;
+    width: 100%;
+    max-height: none;
+    padding: 22px;
+    margin: 8px 0 24px;
   }
 
   .site-header {
@@ -853,10 +884,37 @@ body::before {
 
   .site-nav {
     order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .header-actions {
+    width: 100%;
+  }
+
+  .header-actions a {
+    flex: 1 1 calc(50% - 6px);
+    justify-content: center;
+    display: inline-flex;
   }
 
   .hero {
     padding-top: 44px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 14vw, 58px);
+    line-height: 0.98;
+  }
+
+  .hero-lead,
+  .section-head p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding-top: 64px;
   }
 
   .product-grid,
@@ -867,7 +925,77 @@ body::before {
     grid-template-columns: 1fr;
   }
 
+  .metric-card,
+  .product-card,
+  .product-detail,
+  .hero-panel,
+  .ladder-card,
+  .pain-card,
+  .direction-card,
+  .timeline-card,
+  .mvp-controls,
+  .mvp-output,
+  .source-link {
+    padding: 20px;
+  }
+
+  .scenario-button,
+  .filter-chip,
+  .tab-button {
+    white-space: nowrap;
+  }
+
   .site-footer {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header,
+  .section,
+  .site-footer {
+    width: min(calc(100% - 20px), var(--max-width));
+  }
+
+  .site-header {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-copy strong {
+    font-size: 14px;
+  }
+
+  .brand-copy span {
+    font-size: 11px;
+  }
+
+  .site-nav a,
+  .footer-links a {
+    font-size: 13px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .ghost-button {
+    padding: 11px 14px;
+    font-size: 13px;
+  }
+
+  .assignment-dialog h2,
+  .section-head h2 {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .hero-metrics {
+    gap: 10px;
+  }
+
+  .metric-card {
+    min-width: 100%;
   }
 }
