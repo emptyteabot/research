@@ -36,12 +36,12 @@
             <article class="assignment-card">
               <span>03</span>
               <h3>MVP Demo</h3>
-              <p>我把 MVP 做成一个可交互的 SpecFlow 原型，能切换场景、查看 Spec / Plan / Patch / Evidence / PR。</p>
+              <p>真实在线 MVP 是 <code>LeadPulse</code>，站内另附一个交互式说明原型，用于展示我对切入方向的产品化思考。</p>
             </article>
           </div>
           <div class="assignment-actions">
             <a class="primary-button" href="#research" data-close-modal>开始阅读作业</a>
-            <a class="secondary-button" href="#mvp" data-close-modal>直接看 MVP</a>
+            <a class="secondary-button" href="http://43.135.51.214/leadpulse" target="_blank" rel="noreferrer">打开在线 MVP</a>
           </div>
         </div>
       </div>
@@ -61,8 +61,8 @@
           <a href="#sources">来源</a>
         </nav>
         <div class="header-actions">
-          <a class="ghost-button" href="https://vision-metropolitan-taxi-fotos.trycloudflare.com/" target="_blank" rel="noreferrer">参考 Demo</a>
-          <a class="primary-button" href="#mvp">查看交互原型</a>
+          <a class="ghost-button" href="http://43.135.51.214/leadpulse" target="_blank" rel="noreferrer">在线 MVP</a>
+          <a class="primary-button" href="#mvp">查看作业展示</a>
         </div>
       </header>
 
@@ -77,7 +77,7 @@
             </p>
             <div class="hero-actions">
               <a class="primary-button" href="#research">阅读调研结论</a>
-              <a class="secondary-button" href="#mvp">试玩 MVP Demo</a>
+              <a class="secondary-button" href="http://43.135.51.214/leadpulse" target="_blank" rel="noreferrer">打开 LeadPulse MVP</a>
             </div>
             <div class="hero-metrics">
               <div class="metric-card">
@@ -239,22 +239,34 @@
 
         <section id="mvp" class="section">
           <div class="section-head">
-            <span class="section-kicker">Interactive MVP</span>
-            <h2>SpecFlow：一个把“会写代码”变成“会交付”的最小可行原型。</h2>
+            <span class="section-kicker">Live MVP</span>
+            <h2>真实在线 MVP 是 LeadPulse，站内这部分是我对产品切入点的补充展示。</h2>
             <p>
-              下面这个交互区模拟的是 SpecFlow 的核心工作台：输入一个需求场景，
-              系统自动生成 Spec、任务计划、Patch 摘要、验证证据与 PR 说明，并支持导出成 Markdown 交付件。
+              在线体验链接：
+              <a class="inline-link" href="http://43.135.51.214/leadpulse" target="_blank" rel="noreferrer">http://43.135.51.214/leadpulse</a>
+              。下面的交互区不是最终产品站，而是我为了说明“为什么选择 Control Plane 作为切入方向”补做的展示原型。
             </p>
+          </div>
+
+          <div class="live-mvp-banner surface-card">
+            <div>
+              <span class="mini-kicker">Actual demo</span>
+              <h3>LeadPulse | AI Revenue Operating System</h3>
+              <p>面试官如果要看我当前真实上线的 MVP，请优先点击这个在线地址。这个链接对应的是可访问的产品 demo，不是说明页。</p>
+            </div>
+            <div class="live-mvp-actions">
+              <a class="primary-button" href="http://43.135.51.214/leadpulse" target="_blank" rel="noreferrer">打开在线 MVP</a>
+            </div>
           </div>
 
           <div class="mvp-layout">
             <div class="mvp-controls surface-card">
               <div class="control-block">
-                <span class="control-label">演示场景</span>
+                <span class="control-label">补充说明场景</span>
                 <div id="scenario-list" class="scenario-list"></div>
               </div>
               <div class="control-block">
-                <span class="control-label">这个 MVP 想证明什么</span>
+                <span class="control-label">这个补充原型想证明什么</span>
                 <ul class="proof-list">
                   <li>AI 产出的第一层对象不再是代码，而是 Spec</li>
                   <li>计划可编辑、变更可审计、证据可追溯</li>
@@ -262,7 +274,7 @@
                   <li>最后输出的是可 merge 的 PR，而不是一堆零碎对话</li>
                 </ul>
               </div>
-              <button id="download-markdown" class="primary-button wide-button">导出 Markdown 交付件</button>
+              <button id="download-markdown" class="primary-button wide-button">导出补充原型 Markdown</button>
             </div>
 
             <div class="mvp-output surface-card">
@@ -357,11 +369,11 @@
       <footer class="site-footer">
         <div>
           <strong>SpecFlow MVP</strong>
-          <span>一份将调研、判断与原型合并展示的作业型单页网站。</span>
+          <span>作业展示页；真实在线 MVP 为 LeadPulse。</span>
         </div>
         <div class="footer-links">
           <a href="#top">回到顶部</a>
-          <a href="https://vision-metropolitan-taxi-fotos.trycloudflare.com/" target="_blank" rel="noreferrer">参考 Demo</a>
+          <a href="http://43.135.51.214/leadpulse" target="_blank" rel="noreferrer">打开在线 MVP</a>
         </div>
       </footer>
     </div>
