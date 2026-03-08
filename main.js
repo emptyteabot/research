@@ -328,6 +328,12 @@ const scenarioTitle = document.getElementById("scenario-title");
 const scenarioSummary = document.getElementById("scenario-summary");
 const scenarioTag = document.getElementById("scenario-tag");
 const tabContent = document.getElementById("tab-content");
+const assignmentModal = document.getElementById("assignment-modal");
+
+function closeAssignmentModal() {
+  assignmentModal.classList.remove("is-visible");
+  document.body.classList.remove("modal-open");
+}
 
 function layerClass(layer) {
   if (layer === "assistant") return "layer-assistant";
@@ -541,6 +547,18 @@ ${scenario.evidence.map((item) => `- ${item}`).join("\n")}
 }
 
 document.getElementById("download-markdown").addEventListener("click", exportMarkdown);
+
+document.body.classList.add("modal-open");
+
+document.querySelectorAll("[data-close-modal], #close-assignment-modal").forEach((node) => {
+  node.addEventListener("click", closeAssignmentModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && assignmentModal.classList.contains("is-visible")) {
+    closeAssignmentModal();
+  }
+});
 
 bindFilters();
 bindTabs();

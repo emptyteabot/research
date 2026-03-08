@@ -13,6 +13,39 @@
   </head>
   <body>
     <div class="page-shell">
+      <div id="assignment-modal" class="assignment-modal is-visible" role="dialog" aria-modal="true" aria-labelledby="assignment-modal-title">
+        <div class="assignment-overlay" data-close-modal></div>
+        <div class="assignment-dialog surface-card">
+          <button id="close-assignment-modal" class="modal-close" type="button" aria-label="关闭弹窗">×</button>
+          <span class="mini-kicker">DeepWisdom PM Assignment</span>
+          <h2 id="assignment-modal-title">这是我提交的「AI 驱动端到端开发」面试作业</h2>
+          <p class="assignment-intro">
+            这个网站不是普通官网，而是我把 <strong>调研结论、切入判断、MVP Demo</strong> 三部分直接做成了一个可在线浏览、可交互演示的作业站点。
+          </p>
+          <div class="assignment-grid">
+            <article class="assignment-card">
+              <span>01</span>
+              <h3>调研结论</h3>
+              <p>对 8 个代表性产品做了分层比较：助手层、Agentic IDE、自治工程师，并总结结构性痛点。</p>
+            </article>
+            <article class="assignment-card">
+              <span>02</span>
+              <h3>切入判断</h3>
+              <p>我选择切入 Spec-driven Control Plane：不是再做一个 IDE，而是做 AI 交付的控制层。</p>
+            </article>
+            <article class="assignment-card">
+              <span>03</span>
+              <h3>MVP Demo</h3>
+              <p>我把 MVP 做成一个可交互的 SpecFlow 原型，能切换场景、查看 Spec / Plan / Patch / Evidence / PR。</p>
+            </article>
+          </div>
+          <div class="assignment-actions">
+            <a class="primary-button" href="#research" data-close-modal>开始阅读作业</a>
+            <a class="secondary-button" href="#mvp" data-close-modal>直接看 MVP</a>
+          </div>
+        </div>
+      </div>
+
       <header class="site-header">
         <a class="brand" href="#top">
           <span class="brand-mark">S</span>
