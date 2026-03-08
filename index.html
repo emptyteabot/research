@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 驱动端到端开发｜SpecFlow Control Plane</title>
+    <meta
+      name="description"
+      content="一份面向 DeepWisdom 面试提交的 AI 驱动端到端开发调研与 MVP 展示站点。"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top">
+          <span class="brand-mark">S</span>
+          <span class="brand-copy">
+            <strong>SpecFlow</strong>
+            <span>AI Delivery Control Plane</span>
+          </span>
+        </a>
+        <nav class="site-nav">
+          <a href="#research">调研</a>
+          <a href="#gap">判断</a>
+          <a href="#mvp">MVP</a>
+          <a href="#sources">来源</a>
+        </nav>
+        <div class="header-actions">
+          <a class="ghost-button" href="https://vision-metropolitan-taxi-fotos.trycloudflare.com/" target="_blank" rel="noreferrer">参考 Demo</a>
+          <a class="primary-button" href="#mvp">查看交互原型</a>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section">
+          <div class="hero-copy">
+            <div class="eyebrow">DeepWisdom PM Assignment · AI Driven End-to-End Development</div>
+            <h1>从 AI 会写代码，走向 AI 可交付。</h1>
+            <p class="hero-lead">
+              我对“AI 驱动端到端开发”的判断是：下一阶段的关键，不是再多一个代码生成器，
+              而是把 <span>Spec → Plan → Patch → Evidence → PR</span> 变成一个可追溯、可审计、可交付的控制平面。
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#research">阅读调研结论</a>
+              <a class="secondary-button" href="#mvp">试玩 MVP Demo</a>
+            </div>
+            <div class="hero-metrics">
+              <div class="metric-card">
+                <span class="metric-label">研究样本</span>
+                <strong>8 个产品</strong>
+                <span class="metric-note">助手层 → Agentic IDE → 自治工程师</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">核心洞察</span>
+                <strong>4 个结构性痛点</strong>
+                <span class="metric-note">静默失败、Day 2 运维、上下文退化、治理边界</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">切入方向</span>
+                <strong>Spec-driven Control Plane</strong>
+                <span class="metric-note">不是更强 IDE，而是更强交付层</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-panel surface-card">
+            <div class="panel-header">
+              <span class="panel-kicker">Executive Summary</span>
+              <h2>一句话结论</h2>
+            </div>
+            <ul class="summary-list">
+              <li>AI 开发工具正从代码补全，快速进化为可规划、可执行、可测试的开发智能体。</li>
+              <li>主流产品都在强调自动化，但同样都在强调人工评审、测试、回滚与治理。</li>
+              <li>真正的机会，不在“再多写一点代码”，而在“把 AI 产出变成团队能接受的交付单元”。</li>
+              <li>因此我选择做面向产品经理与工程经理的 Spec-driven 交付控制层。</li>
+            </ul>
+            <div class="panel-foot">
+              <span class="tiny-chip">可追溯 Spec</span>
+              <span class="tiny-chip">可审计 Patch</span>
+              <span class="tiny-chip">可验证 Evidence</span>
+            </div>
+          </aside>
+        </section>
+
+        <section id="gap" class="section">
+          <div class="section-head">
+            <span class="section-kicker">Why now</span>
+            <h2>市场正在往前跑，但“可控交付”仍然空着。</h2>
+            <p>
+              过去两年，行业的演进路径很清晰：从助手层，到 Agentic IDE，再到自治工程师。
+              但每走一步，治理成本都会同步上升。我的判断是，下一个产品机会在自动化和可控性之间的平衡层。
+            </p>
+          </div>
+          <div class="ladder-grid">
+            <article class="ladder-card surface-card">
+              <span class="ladder-step">01</span>
+              <h3>助手层</h3>
+              <p>Copilot、灵码、快码这类产品解决“写得更快”，但不直接承担完整交付责任。</p>
+            </article>
+            <article class="ladder-card surface-card">
+              <span class="ladder-step">02</span>
+              <h3>Agentic IDE</h3>
+              <p>Cursor、Windsurf、TRAE 把能力推进到规划、多文件改动、终端执行与工作流复用。</p>
+            </article>
+            <article class="ladder-card surface-card">
+              <span class="ladder-step">03</span>
+              <h3>自治工程师</h3>
+              <p>Devin、Replit Agent 把“任务委派给 AI”做成产品核心，强调更长任务链与并行执行。</p>
+            </article>
+            <article class="ladder-card accent-card">
+              <span class="ladder-step">04</span>
+              <h3>控制平面</h3>
+              <p>真正缺的是把需求、计划、变更、测试证据与 PR 审批串成可审计交付资产。</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="research" class="section">
+          <div class="section-head">
+            <span class="section-kicker">Research landscape</span>
+            <h2>8 个代表性产品，指向同一个趋势。</h2>
+            <p>
+              这些产品的共性不是“谁更会补全”，而是都开始把 AI 放进真实的工程工作流里。
+              差别在于，它们把边界画在 IDE、平台、还是自治代理。
+            </p>
+          </div>
+
+          <div class="filter-row">
+            <button class="filter-chip active" data-filter="all">全部</button>
+            <button class="filter-chip" data-filter="assistant">助手层</button>
+            <button class="filter-chip" data-filter="agentic">Agentic IDE</button>
+            <button class="filter-chip" data-filter="autonomous">自治工程师</button>
+          </div>
+
+          <div class="research-layout">
+            <div id="product-grid" class="product-grid"></div>
+            <aside id="product-detail" class="product-detail surface-card"></aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <span class="section-kicker">Structural pains</span>
+            <h2>为什么“自动化”做得越强，越需要控制层？</h2>
+          </div>
+          <div class="pain-grid">
+            <article class="pain-card surface-card">
+              <h3>静默失败</h3>
+              <p>AI 生成代码可以语法正确，却在业务边界上悄悄出错；没有证据链，就很难在上线前截住。</p>
+            </article>
+            <article class="pain-card surface-card">
+              <h3>Day 0 与 Day 2 断裂</h3>
+              <p>行业很擅长“几分钟做出一个 demo”，却很少真正解决上线后的监控、修复、重构与反馈闭环。</p>
+            </article>
+            <article class="pain-card surface-card">
+              <h3>上下文退化</h3>
+              <p>当代码库变大、依赖变深、任务变长，智能体更容易丢失上下文，进入改一处崩三处的死循环。</p>
+            </article>
+            <article class="pain-card surface-card">
+              <h3>治理边界模糊</h3>
+              <p>谁能放开终端？谁能触发部署？谁来确认变更符合 PRD？这些问题不解决，AI 很难真正进入生产流。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section direction-section">
+          <div class="section-head">
+            <span class="section-kicker">My bet</span>
+            <h2>我选择切入：Spec-driven + 可审计的 PRD → Plan → Patch 工作流层。</h2>
+          </div>
+
+          <div class="direction-layout">
+            <article class="direction-card surface-card">
+              <h3>为什么不是再做一个 IDE？</h3>
+              <p>
+                因为主流产品已经证明：AI 会写代码并不稀缺，真正稀缺的是
+                <strong>“团队相信这次改动可以被合并”</strong>。
+              </p>
+              <ul>
+                <li>把 PRD 变成可追溯 Spec，而不是一句模糊 prompt</li>
+                <li>把改动变成带风险标签的 Patch，而不是黑盒输出</li>
+                <li>把正确性变成测试、扫描、运行截图等 Evidence，而不是“看起来应该没问题”</li>
+              </ul>
+            </article>
+
+            <article class="direction-card feature-card">
+              <span class="mini-kicker">SpecFlow Value</span>
+              <h3>面向 PM / Tech Lead / 工程经理的交付控制台</h3>
+              <div class="flow-line">
+                <span>PRD</span>
+                <span>Spec</span>
+                <span>Plan</span>
+                <span>Patch</span>
+                <span>Evidence</span>
+                <span>PR</span>
+              </div>
+              <p>
+                用户不需要理解每个模型，也不需要盯着 AI 写每一行代码；他们只需要知道：
+                需求是否清晰、计划是否合理、改动是否可回滚、证据是否齐全、这次 PR 能不能放心 merge。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="mvp" class="section">
+          <div class="section-head">
+            <span class="section-kicker">Interactive MVP</span>
+            <h2>SpecFlow：一个把“会写代码”变成“会交付”的最小可行原型。</h2>
+            <p>
+              下面这个交互区模拟的是 SpecFlow 的核心工作台：输入一个需求场景，
+              系统自动生成 Spec、任务计划、Patch 摘要、验证证据与 PR 说明，并支持导出成 Markdown 交付件。
+            </p>
+          </div>
+
+          <div class="mvp-layout">
+            <div class="mvp-controls surface-card">
+              <div class="control-block">
+                <span class="control-label">演示场景</span>
+                <div id="scenario-list" class="scenario-list"></div>
+              </div>
+              <div class="control-block">
+                <span class="control-label">这个 MVP 想证明什么</span>
+                <ul class="proof-list">
+                  <li>AI 产出的第一层对象不再是代码，而是 Spec</li>
+                  <li>计划可编辑、变更可审计、证据可追溯</li>
+                  <li>PM 与工程经理也能直接理解交付状态</li>
+                  <li>最后输出的是可 merge 的 PR，而不是一堆零碎对话</li>
+                </ul>
+              </div>
+              <button id="download-markdown" class="primary-button wide-button">导出 Markdown 交付件</button>
+            </div>
+
+            <div class="mvp-output surface-card">
+              <div class="tab-row">
+                <button class="tab-button active" data-tab="spec">Spec</button>
+                <button class="tab-button" data-tab="plan">Plan</button>
+                <button class="tab-button" data-tab="patch">Patch</button>
+                <button class="tab-button" data-tab="evidence">Evidence</button>
+                <button class="tab-button" data-tab="pr">PR</button>
+              </div>
+              <div class="output-head">
+                <span id="scenario-tag" class="tiny-chip">Spec-driven</span>
+                <h3 id="scenario-title">加载中…</h3>
+                <p id="scenario-summary"></p>
+              </div>
+              <div id="tab-content" class="tab-content"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <span class="section-kicker">3-Day execution</span>
+            <h2>如果这是一个 3 天内可交付的 PM 作业，我会这样落地。</h2>
+          </div>
+          <div class="timeline-grid">
+            <article class="timeline-card surface-card">
+              <span class="timeline-day">Day 1</span>
+              <h3>框架搭建</h3>
+              <p>完成竞品分层、统一评估维度、明确产品判断，并用一页 Summary 讲清为什么不是“再做一个 IDE”。</p>
+            </article>
+            <article class="timeline-card surface-card">
+              <span class="timeline-day">Day 2</span>
+              <h3>MVP 交互原型</h3>
+              <p>实现 Spec、Plan、Patch、Evidence、PR 五段式原型，证明“可交付”才是产品的最小闭环。</p>
+            </article>
+            <article class="timeline-card surface-card">
+              <span class="timeline-day">Day 3</span>
+              <h3>公网展示与提交</h3>
+              <p>部署静态站、补充来源链接与 demo 路径，让这份作业不仅能读，还能直接被浏览和讨论。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section source-section" id="sources">
+          <div class="section-head">
+            <span class="section-kicker">Official sources</span>
+            <h2>调研参考入口</h2>
+            <p>下列链接以官方文档/官网为主，方便面试官继续追溯。</p>
+          </div>
+          <div class="source-grid">
+            <a class="source-link surface-card" href="https://docs.github.com/zh/copilot" target="_blank" rel="noreferrer">
+              <strong>GitHub Copilot</strong>
+              <span>官方文档</span>
+            </a>
+            <a class="source-link surface-card" href="https://github.blog/news-insights/product-news/github-copilot-workspace/" target="_blank" rel="noreferrer">
+              <strong>Copilot Workspace</strong>
+              <span>官方博客</span>
+            </a>
+            <a class="source-link surface-card" href="https://docs.replit.com/replitai/agent" target="_blank" rel="noreferrer">
+              <strong>Replit Agent</strong>
+              <span>官方文档</span>
+            </a>
+            <a class="source-link surface-card" href="https://cursor.com/cn/docs" target="_blank" rel="noreferrer">
+              <strong>Cursor</strong>
+              <span>官方文档</span>
+            </a>
+            <a class="source-link surface-card" href="https://docs.windsurf.com/zh/windsurf/cascade/cascade" target="_blank" rel="noreferrer">
+              <strong>Windsurf Cascade</strong>
+              <span>官方文档</span>
+            </a>
+            <a class="source-link surface-card" href="https://docs.devin.ai/get-started/first-run" target="_blank" rel="noreferrer">
+              <strong>Devin</strong>
+              <span>官方文档</span>
+            </a>
+            <a class="source-link surface-card" href="https://lingma.aliyun.com/" target="_blank" rel="noreferrer">
+              <strong>通义灵码</strong>
+              <span>官方网站</span>
+            </a>
+            <a class="source-link surface-card" href="https://comate.baidu.com/zh" target="_blank" rel="noreferrer">
+              <strong>文心快码</strong>
+              <span>官方网站</span>
+            </a>
+            <a class="source-link surface-card" href="https://www.trae.cn/" target="_blank" rel="noreferrer">
+              <strong>TRAE</strong>
+              <span>官方网站</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>SpecFlow MVP</strong>
+          <span>一份将调研、判断与原型合并展示的作业型单页网站。</span>
+        </div>
+        <div class="footer-links">
+          <a href="#top">回到顶部</a>
+          <a href="https://vision-metropolitan-taxi-fotos.trycloudflare.com/" target="_blank" rel="noreferrer">参考 Demo</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
