@@ -4,321 +4,303 @@ const products = [
     name: "GitHub Copilot / Workspace",
     layer: "assistant",
     layerLabel: "助手层",
-    summary: "把 AI 深度嵌进 GitHub 的事实系统：Issue、PR、Actions、代码扫描与评审门禁。",
+    summary: "把 AI 深度嵌进 GitHub 的事实系统：Issue、代码、PR、Actions 与安全扫描。",
     problem: "解决从任务理解到计划生成，再到代码变更、测试与 PR 的协作断层。",
     shape: "插件 + GitHub 平台 + Workspace 工作区",
     strengths: [
-      "以 GitHub 为中心，天然适配团队协作和审阅流程",
-      "计划可编辑、变更可审查，更适合真实工程团队",
-      "和 Actions、代码扫描、安全修复形成闭环"
+      "任务、计划、改动和 PR 天然串在 GitHub 里",
+      "适合真实工程团队，协作与审阅门槛低",
+      "和 Actions / Code Scanning 形成完整工程闭环"
     ],
     gaps: [
       "强绑定 GitHub 生态",
-      "最终仍需大量人工评审与验证",
-      "更像平台增强，而不是独立的控制平面"
+      "对‘做出来以后怎么卖’没有回答",
+      "更偏开发交付增强，而不是业务闭环"
     ],
-    scores: { auto: 3.2, control: 4.6, delivery: 4.2, enterprise: 4.6 }
-  },
-  {
-    id: "replit",
-    name: "Replit Agent",
-    layer: "autonomous",
-    layerLabel: "自治工程师",
-    summary: "把想法直接变成可运行应用，构建、运行、托管都在同一个云端工作区完成。",
-    problem: "解决从自然语言到可运行原型之间的摩擦，适合快速从 0 到 1。",
-    shape: "云端 IDE + Agent + Hosting",
-    strengths: [
-      "原型搭建速度快，部署链路短",
-      "非传统开发者也能上手",
-      "平台化托管适合 demo 和小应用"
-    ],
-    gaps: [
-      "复杂工程的权限边界和治理能力弱一些",
-      "闭环很强，但对既有团队流程的融入有限",
-      "一旦进入生产级协作，往往要外溢到更传统的工具链"
-    ],
-    scores: { auto: 4.5, control: 3.1, delivery: 4.4, enterprise: 2.8 }
+    scores: { build: 4.5, autonomy: 3.3, revenue: 1.2, control: 4.6 }
   },
   {
     id: "cursor",
     name: "Cursor",
     layer: "agentic",
     layerLabel: "Agentic IDE",
-    summary: "AI 原生编辑器，强调代码库理解、多模型选择、长上下文与企业控制能力。",
-    problem: "解决本地开发中多文件理解、复杂改动和高频对话编程的效率问题。",
+    summary: "AI 原生编辑器，强调代码库上下文、多模型切换与项目级改动效率。",
+    problem: "解决大型代码库中跨文件理解、改动与重构效率的问题。",
     shape: "AI 原生 IDE",
     strengths: [
-      "体验成熟，适合专业开发者重度使用",
-      "多模型策略灵活，适配不同任务",
-      "隐私模式、团队管理等企业特性比较完善"
+      "开发体验成熟，适合专业工程师重度使用",
+      "多模型策略灵活，适合不同复杂度任务",
+      "在 IDE 内做长链路改动的流畅度很强"
     ],
     gaps: [
-      "强于 IDE 侧效率，弱于跨角色交付可视化",
-      "长任务成本和上下文开销更敏感",
-      "交付证据仍分散在外部测试与 PR 流程里"
+      "强于写代码，弱于收入闭环",
+      "面向开发者，不直接面向经营问题",
+      "长任务成本和上下文开销敏感"
     ],
-    scores: { auto: 3.8, control: 4.2, delivery: 3.3, enterprise: 4.1 }
+    scores: { build: 4.7, autonomy: 3.8, revenue: 1.0, control: 4.1 }
   },
   {
     id: "windsurf",
     name: "Windsurf",
     layer: "agentic",
     layerLabel: "Agentic IDE",
-    summary: "Cascade 强调规划代理、工具调用、检查点回退、工作流与部署，把协作代理做深。",
-    problem: "解决多步骤、多文件、多工具调用的任务推进效率。",
+    summary: "用 Cascade 把规划、工具调用、回退检查点与工作流执行做深。",
+    problem: "解决多步骤、多文件、多工具调用任务的推进效率。",
     shape: "AI IDE + 工作流代理",
     strengths: [
-      "规划、执行、回退这条链路做得清晰",
-      "适合复杂度中等的多步骤任务",
-      "工作流和部署概念更接近真实交付"
+      "规划、执行、回退链路清晰",
+      "适合复杂度中等的多步骤工程任务",
+      "工作流意识比普通 IDE 更强"
     ],
     gaps: [
-      "功能越强，治理越复杂",
-      "更多工具调用意味着更高成本与安全面",
-      "仍然缺少一个面向 PM 的交付控制台心智"
+      "还是主要优化工程执行",
+      "工具越多，治理和成本越复杂",
+      "离真实业务经营还有一层距离"
     ],
-    scores: { auto: 4.1, control: 4.1, delivery: 3.9, enterprise: 3.8 }
+    scores: { build: 4.5, autonomy: 4.0, revenue: 1.1, control: 4.0 }
   },
   {
     id: "devin",
     name: "Devin",
     layer: "autonomous",
     layerLabel: "自治工程师",
-    summary: "最激进的‘任务委派给 AI 工程师’产品叙事，强调自治任务、并发会话和企业安全。",
-    problem: "解决长链路工程任务、迁移重构与大规模积压工作的执行问题。",
+    summary: "最激进的‘任务委派给 AI 工程师’产品叙事，强调长任务与并发执行。",
+    problem: "解决迁移、重构、积压任务等长链路工程执行问题。",
     shape: "自治工程师平台 + Web IDE",
     strengths: [
-      "适合可拆分、边界清晰的大任务",
-      "并行会话与任务委派的产品心智强",
-      "企业安全与隔离能力更完善"
+      "任务委派心智非常强",
+      "适合边界清晰、可拆分的大任务",
+      "把 AI 从助手推进到更接近‘队友’"
     ],
     gaps: [
-      "正确性和授权边界是高风险区",
-      "对 Spec、验收标准与人工门禁依赖更强",
-      "成本感知需要被产品化解释"
+      "正确性和授权边界风险更高",
+      "开放式业务问题容易失焦",
+      "能做很多工程动作，但不直接解决收入验证"
     ],
-    scores: { auto: 4.9, control: 3.4, delivery: 4.1, enterprise: 4.4 }
+    scores: { build: 4.6, autonomy: 4.9, revenue: 1.1, control: 3.4 }
   },
   {
-    id: "lingma",
-    name: "通义灵码",
-    layer: "assistant",
-    layerLabel: "助手层",
-    summary: "面向中文研发场景，把工程自动感知、Quest 模式与 Worktree 交付审查结合起来。",
-    problem: "解决国内团队的任务委派、Spec 驱动执行与工程环境理解问题。",
-    shape: "IDE 插件 + Lingma IDE",
+    id: "replit",
+    name: "Replit Agent",
+    layer: "autonomous",
+    layerLabel: "自治工程师",
+    summary: "从自然语言快速生成、运行和发布应用，把构建到上线收在同一个云端环境里。",
+    problem: "解决从 0 到 1 做出原型与可运行应用的摩擦。",
+    shape: "云端 IDE + Agent + Hosting",
     strengths: [
-      "中文开发场景友好",
-      "Quest 的 Spec、Changed Files、Preview 设计很像交付流程",
-      "Worktree 模式天然更安全"
+      "从创意到可运行 demo 的路径极短",
+      "开发和托管一体，适合快速试错",
+      "对非传统开发者也相对友好"
     ],
     gaps: [
-      "能力很强，但仍主要停留在开发者使用视角",
-      "要发挥价值，团队必须先沉淀规则与验收标准",
-      "需要更强的跨角色可视化层"
+      "更强于原型，不一定强于复杂生产协作",
+      "平台闭环强，但和既有团队流程耦合较弱",
+      "依然没有覆盖 build 后的经营闭环"
     ],
-    scores: { auto: 3.6, control: 4.3, delivery: 3.6, enterprise: 4.0 }
+    scores: { build: 4.8, autonomy: 4.4, revenue: 1.5, control: 3.0 }
   },
   {
-    id: "comate",
-    name: "文心快码",
-    layer: "assistant",
-    layerLabel: "助手层",
-    summary: "强调 Rules、MCP、企业私域知识增强与私有化，把国内企业落地要素打包成方案。",
-    problem: "解决企业知识、规范与大模型能力如何结合的问题。",
-    shape: "IDE 助手 + 企业增强平台",
-    strengths: [
-      "企业规范、知识库和私有化能力突出",
-      "适合对合规和私域知识要求高的团队",
-      "Rules 思路和 Control Plane 高度契合"
-    ],
-    gaps: [
-      "更偏企业增强，而不是开发工作流革命",
-      "复杂任务依然需要外部测试和审查兜底",
-      "交付体验依赖团队已有工程基础"
-    ],
-    scores: { auto: 3.1, control: 4.5, delivery: 3.2, enterprise: 4.7 }
-  },
-  {
-    id: "trae",
-    name: "TRAE",
+    id: "bolt",
+    name: "Bolt.new",
     layer: "agentic",
     layerLabel: "Agentic IDE",
-    summary: "强调 Builder、SOLO、Plan 模式与企业控制，试图在中文场景下把 Agentic IDE 做得更完整。",
-    problem: "解决中文场景下的需求到代码自动化推进，以及企业管理需求。",
-    shape: "AI IDE / 插件 / CLI",
+    summary: "在浏览器里 prompt、运行、编辑、部署，把 Web 开发环境直接搬到云上。",
+    problem: "解决前端/全栈 Web 原型从描述到运行之间的环境门槛。",
+    shape: "浏览器 Agent + Runtime + Deploy",
     strengths: [
-      "对中文用户更直接",
-      "Builder / SOLO 的产品叙事清晰",
-      "审计日志、知识库、网络控制等企业能力比较完整"
+      "打开网页就能开始做产品",
+      "环境控制能力强，反馈快",
+      "适合快速搭建面向用户的 Web 产品"
     ],
     gaps: [
-      "仍是 IDE/执行层视角，缺少更高层的交付抽象",
-      "Token 与席位配额需要被解释得更透明",
-      "自动化越强，越需要强门禁和权限策略"
+      "复杂业务迭代容易进入 bug 循环",
+      "更偏 build，不偏经营",
+      "对于线索、支付、转化的回答很少"
     ],
-    scores: { auto: 4.0, control: 4.0, delivery: 3.8, enterprise: 4.2 }
+    scores: { build: 4.7, autonomy: 3.9, revenue: 1.3, control: 3.5 }
+  },
+  {
+    id: "v0",
+    name: "v0",
+    layer: "agentic",
+    layerLabel: "Agentic IDE",
+    summary: "以设计和前端表达见长，把概念快速变成高质量界面与可部署应用。",
+    problem: "解决从产品想法到高保真前端原型的落地效率。",
+    shape: "Web 生成式 UI / 全栈原型工具",
+    strengths: [
+      "前端质量高，视觉反馈快",
+      "适合 landing page 和对外展示页面",
+      "和部署链路衔接顺滑"
+    ],
+    gaps: [
+      "强于界面，不强于持续经营",
+      "复杂后端逻辑和状态管理更容易失真",
+      "更像产品生成器，不像收入操作系统"
+    ],
+    scores: { build: 4.6, autonomy: 3.5, revenue: 1.2, control: 3.7 }
+  },
+  {
+    id: "atoms",
+    name: "Atoms / MetaGPT",
+    layer: "business",
+    layerLabel: "商业闭环层",
+    summary: "把端到端从生成代码提升到生成可上线、可收费、可运营的商业实体。",
+    problem: "解决创始人瓶颈：没有完整团队时，如何从想法走到可卖的产品与业务系统。",
+    shape: "多智能体公司化协作 + 商业化生成平台",
+    strengths: [
+      "视角不只停在代码，而是直接面向商业结果",
+      "更符合‘端到端’的完整定义",
+      "天然启发了我对后半段价值的判断"
+    ],
+    gaps: [
+      "高度依赖初始输入质量和业务假设",
+      "复杂企业级接入时灵活性可能受限",
+      "若频繁重构或大规模运行，成本可能上升"
+    ],
+    scores: { build: 4.2, autonomy: 4.4, revenue: 4.7, control: 3.8 }
   }
 ];
 
 const scenarios = [
   {
-    id: "billing",
-    label: "SaaS 账单与订阅页",
-    tag: "PM + Growth",
-    title: "为 AI SaaS 新增订阅页、账单页与用量说明",
-    summary: "这个场景展示 SpecFlow 如何把一个典型产品需求转成可审计的交付件，而不是只吐出一段前端代码。",
-    spec: [
-      "目标：让付费页支持月付/年付切换、展示 credits 消耗规则，并新增账单历史页。",
-      "验收标准：1) 用户能切换周期；2) 成功购买后在账单页看到记录；3) 所有价格展示与政策文案一致；4) 新增基础单测与 E2E 用例。",
-      "风险标签：支付、定价、文案一致性、埋点准确性。"
+    id: "home",
+    label: "首页定位",
+    tag: "Positioning",
+    title: "LeadPulse 首页：先把产品到底卖给谁讲清楚",
+    summary: "首页承担的不是‘好看’，而是快速解释：这是一个给 AI Builder / Indie Hacker / 微型 SaaS 的收入操作系统。",
+    image: "./assets/leadpulse-home.png",
+    problem: [
+      "很多 AI Builder 已经会做产品，但没有稳定获客系统。",
+      "市面上太多工具都在说‘更快生成’，很少说‘更快回款’。",
+      "用户需要在几秒内知道这个产品和通用建站工具不一样。"
     ],
-    plan: [
-      "梳理现有 pricing / billing / usage 组件与 API 依赖",
-      "补齐订阅模型与账单数据结构",
-      "实现前端改动并接支付回调状态",
-      "新增单测、E2E 检查与截图证据",
-      "生成 PR 描述、风险清单与回滚说明"
+    role: [
+      "用一句话把产品定位成 AI Revenue Operating System。",
+      "把实验页、支付、预约、代码导出这些能力并列出来。",
+      "让用户一眼感知这不是概念页，而是一个正在跑的系统。"
     ],
-    patch: `diff --git a/app/pricing/page.tsx b/app/pricing/page.tsx
-+ add billing period toggle
-+ add credits policy panel
-+ sync CTA copy with billing policy
-
-diff --git a/app/billing/page.tsx b/app/billing/page.tsx
-+ create invoice history view
-+ surface payment status and credits usage
-
-diff --git a/tests/billing.spec.ts b/tests/billing.spec.ts
-+ cover purchase success and invoice visibility`,
-    evidence: [
-      "单测：订阅周期切换和价格渲染通过",
-      "E2E：购买后账单页显示最近支付记录",
-      "截图：pricing / billing / checkout success 三张界面截图",
-      "回滚方案：保留旧 pricing route，可通过 feature flag 回退"
+    strengths: [
+      "定位有差异化，不是在重复 IDE 故事。",
+      "首页同时覆盖了产品、支付和经营视角。",
+      "适合作为面试时第一眼的价值说明。"
     ],
-    pr: {
-      title: "feat: add subscription billing flow with auditable credits policy",
-      body: "This PR introduces a spec-validated billing flow including pricing period toggle, invoice history, credits policy sync, and test evidence. Risks are isolated behind a billing feature flag."
-    }
+    gaps: [
+      "品牌层还不够简洁，信息量偏大。",
+      "首屏还可以进一步压缩成更聚焦的一句话价值主张。",
+      "缺少更强的社会证明或真实案例。"
+    ],
+    next: [
+      "补 1 到 2 个真实客户场景或数据点。",
+      "继续压缩 Hero 文案，提升第一屏理解速度。",
+      "补充更明确的 CTA 分流：先预约 vs 直接订阅。"
+    ]
   },
   {
-    id: "migration",
-    label: "框架迁移",
-    tag: "Tech Lead",
-    title: "将 Angular 16 项目迁移到 Angular 18，并补齐风险说明",
-    summary: "这个场景更接近 Devin / 自治工程师擅长的任务：长链路、跨文件、带依赖升级，但需要更强的风险门禁。",
-    spec: [
-      "目标：完成 Angular 16 → 18 的基础迁移，确保构建通过，核心页面不回归。",
-      "验收标准：1) 构建通过；2) 关键路由 smoke test 通过；3) package 更新记录完整；4) 输出 Breaking Changes 风险摘要。",
-      "风险标签：依赖升级、TypeScript 配置变化、路由与表单行为回归。"
+    id: "experiments",
+    label: "实验页",
+    tag: "Experiments",
+    title: "LeadPulse Experiments：先验证哪个垂类最可能带来收入",
+    summary: "实验页不是装饰，而是获客假设验证器：不同垂类各有单独页面，测试哪一类需求最容易产生预约和支付意向。",
+    image: "./assets/leadpulse-experiments.png",
+    problem: [
+      "独立开发者常常不知道应该先卖给谁。",
+      "泛泛流量没有意义，真正重要的是高意向线索。",
+      "如果没有实验页容器，增长会退回到拍脑袋。"
     ],
-    plan: [
-      "扫描 package 与 tsconfig 变更点",
-      "逐步升级依赖并修复编译错误",
-      "运行 smoke test 和基础 lint",
-      "记录 breaking changes 与人工回归项",
-      "生成 PR 与回滚清单"
+    role: [
+      "把不同 ICP 拆成可独立测试的页面。",
+      "让每个页面承载自己的关键词、痛点和 CTA。",
+      "帮助创始人比较不同垂类的预约与转化质量。"
     ],
-    patch: `diff --git a/package.json b/package.json
-- "@angular/core": "^16.x"
-+ "@angular/core": "^18.x"
-
-diff --git a/tsconfig.json b/tsconfig.json
-+ adjust compiler options for Angular 18 compatibility
-
-diff --git a/src/app/...
-+ update deprecated imports and strict typing failures`,
-    evidence: [
-      "构建：ng build 通过",
-      "Smoke Test：登录、首页、设置页可访问",
-      "静态检查：lint 剩余 warning 记录在 PR 中",
-      "人工回归项：富文本、支付模块、国际化需二次验证"
+    strengths: [
+      "把增长实验产品化，不再只是内容运营动作。",
+      "非常适合 PM 面试作业里展示‘如何验证方向’。",
+      "和收入闭环主线强相关，而不是随便做几个页面。"
     ],
-    pr: {
-      title: "chore: migrate Angular app from v16 to v18 with validation evidence",
-      body: "This PR upgrades Angular core dependencies, resolves migration blockers, and attaches smoke-test evidence plus a manual regression checklist for higher-risk modules."
-    }
+    gaps: [
+      "目前的实验数量还不多，仍是 MVP 状态。",
+      "真实转化数据和页面数据还没有完全打通。",
+      "关键词和搜索需求证据还可以更结构化展示。"
+    ],
+    next: [
+      "给每个实验页接入统一的转化埋点。",
+      "自动生成更多垂类实验页。",
+      "把实验结果直接反馈到经营看板。"
+    ]
   },
   {
-    id: "auth",
-    label: "登录鉴权 + 审计日志",
-    tag: "Security",
-    title: "新增邮箱登录、角色权限和关键操作审计日志",
-    summary: "这个场景说明 SpecFlow 为什么要把规则、权限和证据纳入默认输出，因为这类需求不能只看 UI 是否工作。",
-    spec: [
-      "目标：新增邮箱登录、管理员/成员权限分层，并记录关键操作审计日志。",
-      "验收标准：1) 未登录不可访问控制台；2) 管理员可见成员管理页；3) 删除、导出、权限变更会生成审计日志；4) 安全测试覆盖至少 3 个拒绝场景。",
-      "风险标签：权限泄露、日志缺失、会话过期与 CSRF。"
-    ],
-    plan: [
-      "定义 auth session 与 role schema",
-      "实现 route guard 与 server-side permission check",
-      "接入 audit log writer",
-      "补充拒绝路径测试与安全检查",
-      "生成安全摘要和发布建议"
-    ],
-    patch: `diff --git a/lib/auth.ts b/lib/auth.ts
-+ add session and role helpers
-
-diff --git a/app/dashboard/layout.tsx b/app/dashboard/layout.tsx
-+ gate dashboard routes behind auth check
-
-diff --git a/lib/audit.ts b/lib/audit.ts
-+ persist audit events for delete/export/role-update actions`,
-    evidence: [
-      "权限测试：匿名用户访问控制台被拒绝",
-      "角色测试：成员用户无法访问管理页",
-      "安全用例：审计日志在关键操作后写入成功",
-      "发布建议：先灰度到内部 workspace，再放开外部团队"
-    ],
-    pr: {
-      title: "feat: add auth, RBAC, and audit trail for critical workspace actions",
-      body: "This PR introduces gated access, role-based permissions, and auditable event logging. It includes denial-path tests and a phased rollout recommendation."
-    }
-  },
-  {
-    id: "ci",
-    label: "CI 红灯修复",
+    id: "ops",
+    label: "经营看板",
     tag: "Ops",
-    title: "定位 CI 失败原因，并生成可回滚的修复 PR",
-    summary: "这个场景强调的是 Evidence：不是让 AI 猜一遍，而是基于日志、失败测试与改动范围生成最小修复单元。",
-    spec: [
-      "目标：修复主分支 CI 中的失败测试，同时不引入新的回归。",
-      "验收标准：1) 原失败 case 通过；2) 无新增失败；3) 修复范围最小；4) 给出根因说明和回滚点。",
-      "风险标签：测试脆弱性、快照漂移、异步等待不稳定。"
+    title: "LeadPulse Ops：把新增、预约、支付意向和下一步动作放到同一个面板里",
+    summary: "这页最能解释我为什么认为机会在 build 之后：用户每天最需要知道的不是‘又生成了什么’，而是‘今天最该跟进谁、为什么’。",
+    image: "./assets/leadpulse-ops.png",
+    problem: [
+      "创始人和小团队没有统一经营视图。",
+      "线索、预约、支付意向和后续动作分散在多个工具里。",
+      "每天都很忙，但不知道最优先该推进什么。"
     ],
-    plan: [
-      "解析失败日志并定位首次失败断点",
-      "识别测试脆弱点与真实业务回归的边界",
-      "提交最小 patch 并补充稳定性校验",
-      "重新运行 CI 并记录证据",
-      "在 PR 中附上根因、风险和回滚建议"
+    role: [
+      "聚合新增线索、预约、支付意向和经营指标。",
+      "生成‘下一条该发什么’的操作建议。",
+      "让经营从感觉驱动，变成数据驱动。"
     ],
-    patch: `diff --git a/tests/dashboard.spec.ts b/tests/dashboard.spec.ts
-- await page.waitForTimeout(1000)
-+ await expect(page.getByRole("heading", { name: /workspace/i })).toBeVisible()
-
-diff --git a/components/dashboard.tsx b/components/dashboard.tsx
-+ ensure loading state resolves before rendering summary widgets`,
-    evidence: [
-      "CI：原失败 job 已恢复绿色",
-      "日志：根因是 loading state 与脆弱等待逻辑冲突",
-      "验证：相关 smoke case 全部通过",
-      "回滚：可仅回退 dashboard loading patch"
+    strengths: [
+      "很能体现 Revenue Layer 的产品味道。",
+      "相比普通 AI 工具，更像创始人的业务驾驶舱。",
+      "对面试官来说，这页最能看出切入点不是空话。"
     ],
-    pr: {
-      title: "fix: stabilize dashboard CI failure with minimal loading-state patch",
-      body: "This PR replaces brittle waits with deterministic assertions, resolves the dashboard loading race, and documents root cause plus rollback scope."
-    }
+    gaps: [
+      "部分指标当前还是样板数据，未完全接真实源。",
+      "还可以更进一步接支付、预约、CRM 工具。",
+      "经营建议目前偏模板化，后续可更智能。"
+    ],
+    next: [
+      "接 Stripe、表单和预约系统。",
+      "把留存、退款、回本这些指标自动化。",
+      "让下一步跟进建议根据真实线索状态动态生成。"
+    ]
+  },
+  {
+    id: "booking",
+    label: "预约与转化",
+    tag: "Conversion",
+    title: "LeadPulse 预约页：把兴趣变成可跟进的真实线索",
+    summary: "如果说实验页解决的是‘谁值得卖’，预约页解决的就是‘怎么把兴趣真正接住’。",
+    image: "./assets/leadpulse-book.png",
+    problem: [
+      "很多产品停在浏览和点击，没有真正进入转化动作。",
+      "创始人需要一种可筛选、可预约、可后续跟进的入口。",
+      "如果没有 intake，增长漏斗很难跑起来。"
+    ],
+    role: [
+      "承接从实验页来的高意向用户。",
+      "把用户信息结构化沉淀下来。",
+      "为后续诊断、支付与 onboarding 做准备。"
+    ],
+    strengths: [
+      "不是泛泛收集邮箱，而是明确服务于下一步动作。",
+      "和经营看板、支付链路天然衔接。",
+      "非常符合‘MVP 可讨论’而不是‘概念页’的要求。"
+    ],
+    gaps: [
+      "表单逻辑和后端流程还可以更强。",
+      "支付与预约之间的关系还可以设计得更顺滑。",
+      "需要更多真实用户数据验证字段设计是否合理。"
+    ],
+    next: [
+      "把预约和支付的先后路径产品化。",
+      "补充自动化跟进消息与状态机。",
+      "连接真实 CRM / 邮件 / 日程工具。"
+    ]
   }
 ];
 
 const state = {
   filter: "all",
   productId: "copilot",
-  scenarioId: "billing",
-  tab: "spec"
+  scenarioId: "home",
+  tab: "problem"
 };
 
 const productGrid = document.getElementById("product-grid");
@@ -327,6 +309,7 @@ const scenarioList = document.getElementById("scenario-list");
 const scenarioTitle = document.getElementById("scenario-title");
 const scenarioSummary = document.getElementById("scenario-summary");
 const scenarioTag = document.getElementById("scenario-tag");
+const scenarioImage = document.getElementById("scenario-image");
 const tabContent = document.getElementById("tab-content");
 const assignmentModal = document.getElementById("assignment-modal");
 
@@ -338,6 +321,7 @@ function closeAssignmentModal() {
 function layerClass(layer) {
   if (layer === "assistant") return "layer-assistant";
   if (layer === "agentic") return "layer-agentic";
+  if (layer === "business") return "layer-business";
   return "layer-autonomous";
 }
 
@@ -354,9 +338,10 @@ function scoreRow(label, value) {
 }
 
 function renderProducts() {
-  const filtered = state.filter === "all"
-    ? products
-    : products.filter((product) => product.layer === state.filter);
+  const filtered =
+    state.filter === "all"
+      ? products
+      : products.filter((product) => product.layer === state.filter);
 
   if (!filtered.some((product) => product.id === state.productId)) {
     state.productId = filtered[0]?.id ?? products[0].id;
@@ -395,10 +380,10 @@ function renderProductDetail() {
     <h3>${product.name}</h3>
     <p>${product.problem}</p>
     <div class="score-row">
-      ${scoreRow("自动化强度", product.scores.auto)}
-      ${scoreRow("可控性", product.scores.control)}
-      ${scoreRow("交付闭环度", product.scores.delivery)}
-      ${scoreRow("企业适配度", product.scores.enterprise)}
+      ${scoreRow("构建能力", product.scores.build)}
+      ${scoreRow("自治程度", product.scores.autonomy)}
+      ${scoreRow("商业闭环", product.scores.revenue)}
+      ${scoreRow("治理能力", product.scores.control)}
     </div>
     <div class="content-panel" style="margin-top:18px;">
       <h4>做得好的地方</h4>
@@ -436,52 +421,25 @@ function renderScenarioOutput() {
   scenarioTitle.textContent = scenario.title;
   scenarioSummary.textContent = scenario.summary;
   scenarioTag.textContent = scenario.tag;
+  scenarioImage.src = scenario.image;
+  scenarioImage.alt = scenario.title;
 
-  const contentByTab = {
-    spec: `
-      <div class="content-card">
-        <h4>Spec</h4>
-        <div class="content-panel">
-          <ul>${scenario.spec.map((item) => `<li>${item}</li>`).join("")}</ul>
-        </div>
-      </div>
-    `,
-    plan: `
-      <div class="content-card">
-        <h4>Execution Plan</h4>
-        <div class="content-panel">
-          <ul>${scenario.plan.map((item) => `<li>${item}</li>`).join("")}</ul>
-        </div>
-      </div>
-    `,
-    patch: `
-      <div class="content-card">
-        <h4>Patch Summary</h4>
-        <div class="content-panel"><pre>${scenario.patch}</pre></div>
-      </div>
-    `,
-    evidence: `
-      <div class="content-card">
-        <h4>Evidence</h4>
-        <div class="content-panel">
-          <ul>${scenario.evidence.map((item) => `<li>${item}</li>`).join("")}</ul>
-        </div>
-      </div>
-    `,
-    pr: `
-      <div class="content-card">
-        <h4>Pull Request Draft</h4>
-        <div class="content-panel">
-          <pre>Title: ${scenario.pr.title}
-
-Body:
-${scenario.pr.body}</pre>
-        </div>
-      </div>
-    `
+  const sections = {
+    problem: "解决的问题",
+    role: "页面角色",
+    strengths: "做得好的地方",
+    gaps: "仍存在的问题",
+    next: "下一步"
   };
 
-  tabContent.innerHTML = contentByTab[state.tab];
+  tabContent.innerHTML = `
+    <div class="content-card">
+      <h4>${sections[state.tab]}</h4>
+      <div class="content-panel">
+        <ul>${scenario[state.tab].map((item) => `<li>${item}</li>`).join("")}</ul>
+      </div>
+    </div>
+  `;
 }
 
 function bindFilters() {
@@ -509,37 +467,35 @@ function bindTabs() {
 
 function exportMarkdown() {
   const scenario = scenarios.find((item) => item.id === state.scenarioId);
-  const markdown = `# SpecFlow Delivery Package
+  const markdown = `# LeadPulse MVP Module Review
 
-## Scenario
+## Module
 - Title: ${scenario.title}
 - Tag: ${scenario.tag}
 - Summary: ${scenario.summary}
+- Live MVP: http://43.135.51.214/leadpulse
 
-## Spec
-${scenario.spec.map((item) => `- ${item}`).join("\n")}
+## Solves
+${scenario.problem.map((item) => `- ${item}`).join("\n")}
 
-## Plan
-${scenario.plan.map((item) => `- ${item}`).join("\n")}
+## Role
+${scenario.role.map((item) => `- ${item}`).join("\n")}
 
-## Patch Summary
-\`\`\`diff
-${scenario.patch}
-\`\`\`
+## Strengths
+${scenario.strengths.map((item) => `- ${item}`).join("\n")}
 
-## Evidence
-${scenario.evidence.map((item) => `- ${item}`).join("\n")}
+## Gaps
+${scenario.gaps.map((item) => `- ${item}`).join("\n")}
 
-## PR Draft
-- Title: ${scenario.pr.title}
-- Body: ${scenario.pr.body}
+## Next
+${scenario.next.map((item) => `- ${item}`).join("\n")}
 `;
 
   const blob = new Blob([markdown], { type: "text/markdown;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `specflow-${scenario.id}.md`;
+  link.download = `leadpulse-${scenario.id}.md`;
   document.body.appendChild(link);
   link.click();
   link.remove();
